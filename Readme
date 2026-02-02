@@ -1,0 +1,147 @@
+# Rush 02: Number to Words
+
+This project is part of the C Piscine at 42. The goal is to create a program that converts a number into its English word representation.
+
+## Table of Contents
+
+* [About The Project](#about-the-project)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Error Handling](#error-handling)
+* [File Structure](#file-structure)
+* [Bonus Features](#bonus-features)
+* [Makefile](#makefile)
+* [Submission and Evaluation](#submission-and-evaluation)
+* [Authors](#authors)
+
+## About The Project
+
+The main objective of this project is to create a program that takes an unsigned integer as input and outputs the corresponding English word representation. The program can also accept a custom dictionary to perform the conversion.
+
+This project is designed to test your skills in:
+
+* C programming
+* Memory management (malloc, free)
+* File I/O (open, read, close)
+* String manipulation
+* Error handling
+* Teamwork and collaboration
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+* A C compiler (e.g., `gcc`)
+* `make` utility
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ReageMeuFilho/rush02.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd rush02
+   ```
+3. Compile the project
+   ```sh
+   make
+   ```
+
+## Usage
+
+The program can be run in two ways:
+
+1.  **With a single argument (the number to convert):**
+
+    ```sh
+    ./rush-02 <number>
+    ```
+
+    Example:
+
+    ```sh
+    ./rush-02 123
+    # Expected output: one hundred twenty-three
+    ```
+
+2.  **With two arguments (a custom dictionary and the number to convert):**
+
+    ```sh
+    ./rush-02 <dictionary_file> <number>
+    ```
+
+    Example:
+
+    ```sh
+    ./rush-02 numbers.dict 42
+    # Expected output: forty-two
+    ```
+
+## Error Handling
+
+The program handles the following errors:
+
+*   **Invalid Input:** If the input number is not a valid positive integer, the program will print `Error` followed by a newline.
+*   **Dictionary Error:** If there is an issue with the dictionary file (e.g., parsing error, file not found, or the dictionary does not allow for the conversion of the given number), the program will print `Dict Error` followed by a newline.
+
+## File Structure
+
+The project is organized into the following files:
+
+| File                      | Description                                                                 |
+| ------------------------- | --------------------------------------------------------------------------- |
+| `main.c`                  | The main entry point of the program.                                        |
+| `dict.h`                  | Header file defining the dictionary-related data structures.                |
+| `Makefile`                | The build script for the project.                                           |
+| `argv_parse.c`            | Handles parsing of command-line arguments.                                  |
+| `dict_build.c`            | Builds the dictionary from the file.                                        |
+| `dict_free.c`             | Frees the memory allocated for the dictionary.                              |
+| `dict_lookup.c`           | Looks up values in the dictionary.                                          |
+| `digits_keys.c`           | Handles the logic for converting single digits to words.                    |
+| `digits_triplet.c`        | Handles the logic for converting triplets of digits to words.               |
+| `free_lines.c`            | Frees the memory allocated for the lines read from the dictionary file.     |
+| `get_triplet.c`           | Extracts a triplet of digits from the input number.                         |
+| `helper_char.c`           | Helper functions for character manipulation.                                |
+| `helper_range.c`          | Helper functions for range checking.                                        |
+| `helper_str.c`            | Helper functions for string manipulation.                                   |
+| `load_dict_line_second.c` | Helper function for loading the second part of a dictionary line.           |
+| `load_dict_lines.c`       | Loads the lines from the dictionary file.                                   |
+| `parse_helpers.c`         | Helper functions for parsing.                                               |
+| `parse_line.c`            | Parses a single line from the dictionary file.                              |
+| `print_ctx.c`             | Handles the printing context.                                               |
+| `print_number.c`          | Prints the final number in words.                                           |
+| `triplet_utils.c`         | Utility functions for handling triplets.                                    |
+| `numbers.dict`            | The default dictionary file.                                                |
+| `test.dict`               | A smaller dictionary file for testing purposes.                             |
+
+## Bonus Features
+
+This project includes the following bonus features:
+
+*   **Advanced Syntax:** The program can use hyphens (-), commas (,), and "and" to produce more grammatically correct output.
+*   **Multi-language Support:** The program can use a different dictionary to convert numbers into other languages.
+*   **Standard Input:** The program can read numbers from the standard input (one per line) if the number argument is `-`.
+
+## Makefile
+
+The `Makefile` includes the following rules:
+
+*   `make` or `make all`: Compiles the project and creates the `rush-02` executable.
+*   `make clean`: Removes the object files.
+*   `make fclean`: Removes the object files and the `rush-02` executable.
+*   `make re`: Recompiles the project.
+
+## Submission and Evaluation
+
+This project is submitted to the 42 intra git repository. The evaluation is done by peers and a final evaluation by the piscine staff. The project must adhere to the 42 coding standards (Norm). 
+
+## Authors
+
+* **ReageMeuFilho** - *Initial work* - [ReageMeuFilho](https://github.com/ReageMeuFilho)
+
